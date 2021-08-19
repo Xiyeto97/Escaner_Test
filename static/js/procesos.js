@@ -108,7 +108,7 @@ function separarBarras() {
       var fila = "<tr><td name='producto'>" + prod + "</td><td name='color'>" + color + "</td><td id='" + secuencia + "' name='lote'>" + lote
         + "</td><td id= 'paq" + secuencia + "' name='" + secuencia + "'>" + paqs
         + "</td><td id= 'peso" + secuencia + "' name='peso" + secuencia + "'>" + peso
-        + "</td><td><input type='text' id='modificar" + secuencia + "' name='modificar' value='0.0'><button id='Modificar' onclick='modificarPeso(" + secuencia + ")'>Modificar</button></td><td id= 'result" + secuencia + "' name='result" + secuencia + "'></td><td id= 'diferencia" + secuencia + "' name='diferencia" + secuencia + "'></td></tr>";
+        + "</td><td><input type='text' id='modificar" + secuencia + "' name='modificar' value='0.0'onclick = 'this.value=" + '""' + "'><button id='Modificar' onclick='modificarPeso(" + secuencia + ")'>Modificar</button></td><td id= 'result" + secuencia + "' name='result" + secuencia + "'><img src='static/img/wait.gif' id= 'resulta" + secuencia + "' class='icon' alt=''></td><td id= 'diferencia" + secuencia + "' name='diferencia" + secuencia + "'></td></tr>";
       secuencia++;
       var btn = document.createElement("TR");
       btn.innerHTML = fila;

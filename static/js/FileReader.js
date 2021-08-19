@@ -89,12 +89,14 @@ function acomodarLotes(lotes) {
               if (peso >= loteAbajo && peso <= loteArriba) {
                 console.log("Lote: " + lotes[j][4] + " Paqts: " + lotes[j][5] + " Peso: " + lotes[j][6]);
                 document.getElementById("resulta" + i).src="static/img/check.gif";
+                $("#diferencia"+i).text('Lote Completo');
+
               } else {
                 var resta = lotes[j][6] - materiales[i][4];
                 lotePeso.push([posicion, parseFloat(resta).toFixed(2)]);
               }
             } else {
-              var resta = lotes[j][5] - materiales[i][3];
+              var resta = lotes[j][6] - materiales[i][4];
               lotePaquetes.push([posicion, resta]);
             }
 
@@ -105,65 +107,57 @@ function acomodarLotes(lotes) {
           break;
         case 11:
           if (materiales[i][2] == lotes[j][5]) {
+            loteCoincidio.push(materiales[i][2]);
             if (materiales[i][3] == lotes[j][6]) {
-              if (materiales[i][4] == lotes[j][7]) {
+              //console.log(lotes[j][6]-.5);
+              var loteAbajo = lotes[j][7] - .5;
+              var loteArriba = (parseFloat(lotes[j][7]) + .5).toFixed(2);
+              var peso = parseFloat(materiales[i][4]).toFixed(2);
+              if (peso >= loteAbajo && peso <= loteArriba) {
                 console.log("Lote: " + lotes[j][5] + " Paqts: " + lotes[j][6] + " Peso: " + lotes[j][7]);
-                itemsCheck.push("true");
+                document.getElementById("resulta" + i).src="static/img/check.gif";
+                $("#diferencia"+i).text('Lote Completo');
+
+              } else {
+                var resta = lotes[j][7] - materiales[i][4];
+                lotePeso.push([posicion, parseFloat(resta).toFixed(2)]);
               }
             } else {
-              itemsCheck.push("false");
+              var resta = lotes[j][7] - materiales[i][4];
+              lotePaquetes.push([posicion, resta]);
             }
 
           } else {
             contadorLotes++;
-            /*if (l==0) {
-              loteNoEncontrado.push(lotes[j][4]);
-              console.log(loteNoEncontrado);
-              l++;
-            } else {
-              for (let h = 0; h < loteNoEncontrado.length; h++) {
-                if (lotes[j][4] != loteNoEncontrado[h]) {
-                  loteNoEncontrado.push(lotes[j][4]);
-                console.log(loteNoEncontrado);
-              }
-                
-              }
-              
-            }
-          
-          //itemsCheck.push(materiales[i][2]);*/
           }
+          
           break;
         case 12:
           if (materiales[i][2] == lotes[j][6]) {
+            loteCoincidio.push(materiales[i][2]);
             if (materiales[i][3] == lotes[j][7]) {
-              if (materiales[i][4] == lotes[j][8]) {
+              //console.log(lotes[j][6]-.5);
+              var loteAbajo = lotes[j][8] - .5;
+              var loteArriba = (parseFloat(lotes[j][8]) + .5).toFixed(2);
+              var peso = parseFloat(materiales[i][4]).toFixed(2);
+              if (peso >= loteAbajo && peso <= loteArriba) {
                 console.log("Lote: " + lotes[j][6] + " Paqts: " + lotes[j][7] + " Peso: " + lotes[j][8]);
-                itemsCheck.push("true");
+                document.getElementById("resulta" + i).src="static/img/check.gif";
+                $("#diferencia"+i).text('Lote Completo');
+
+              } else {
+                var resta = lotes[j][8] - materiales[i][4];
+                lotePeso.push([posicion, parseFloat(resta).toFixed(2)]);
               }
             } else {
-              itemsCheck.push("false");
+              var resta = lotes[j][8] - materiales[i][4];
+              lotePaquetes.push([posicion, resta]);
             }
 
           } else {
             contadorLotes++;
-            /*if (l==0) {
-              loteNoEncontrado.push(lotes[j][4]);
-              console.log(loteNoEncontrado);
-              l++;
-            } else {
-              for (let h = 0; h < loteNoEncontrado.length; h++) {
-                if (lotes[j][4] != loteNoEncontrado[h]) {
-                  loteNoEncontrado.push(lotes[j][4]);
-                console.log(loteNoEncontrado);
-              }
-                
-              }
-              
-            }
-          
-          //itemsCheck.push(materiales[i][2]);*/
           }
+          
           break;
 
         default:
@@ -172,7 +166,8 @@ function acomodarLotes(lotes) {
 
     }
     if (contadorLotes == lotes.length) {
-      console.log("Este lote no se encuentra en la remision " + materiales[posicion][2]);
+      document.getElementById("resulta" + i).src="static/img/no-encontro.gif";
+      $("#diferencia"+i).text('Este lote no se encuentra en la remision ' + materiales[posicion][2]);
     }
 
   }
@@ -196,7 +191,15 @@ function acomodarLotes(lotes) {
   console.log(loteCoincidio);
   console.log(lotePaquetes);
   console.log(lotePeso);
+  descontarPeso(lotePaquetes);
   limpiar();
+}
+
+function descontarPeso(lotePaquetes) {
+  for (let i = 0; i < lotePaquetes.length; i++) {
+    $("#diferencia"+lotePaquetes[i][0]).text('A este lote le hacen falta '+parseFloat(lotePaquetes[i][1]).toFixed(2)+' Kg.');
+    
+  }
 }
 
 function limpiar() {
