@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="static/js/procesos.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="static/js/FileReader.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style></style>
+    <style>
+        .icon{
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+    
+    <title>Prueba</title>
+</head>
+
+<body>
+    <label for="barras">Paquete:</label><br>
+    <input type="text" id="barras" name="barras" value="">
+    <button id="Agregar" onclick="separarBarras()">Agregar</button>
+
+    <table id="t01" class="tablaProuctos">
+        <tr>
+            <th>Producto</th>
+            <th>Color</th>
+            <th>Lote</th>
+            <th>Paquetes</th>
+            <th>Peso</th>
+            <th>Modificar</th>
+            <th>Resultados</th>
+            <th>Diferencia</th>
+        </tr>
+        <tbody id="paquetes"></tbody>
+    </table>
+
+
+    <button id="Guardar" onclick="guardarTabla()">Guardar</button>
+    <form name="myForm">
+        <input name="myInput" type="file">
+    </form>
+    <div></div>
+
+</body>
+
+</html>
