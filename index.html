@@ -9,32 +9,31 @@
     <script src="static/js/procesos.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="static/js/FileReader.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<link href="//db.onlinewebfonts.com/c/df597c648fcebcf41efc459799282b7f?family=Athelas" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" href="static/css/estilo.css">
     <style></style>
     <style>
-        .icon{
-            width: 24px;
-            height: 24px;
-        }
+        
     </style>
     
     <title>Prueba</title>
 </head>
 
 <body>
-    <label for="barras">Paquete:</label><br>
-    <input type="text" id="barras" name="barras" value="">
-    <button id="Agregar" onclick="separarBarras()">Agregar</button>
+    <label for="barras" class="words">Paquete:</label><br>
+    <input type="text" id="barras" name="barras" value="" class="words">
+    <button id="Agregar" onclick="separarBarras()" class="words">Agregar</button>
 
     <table id="t01" class="tablaProuctos">
         <tr>
-            <th>Producto</th>
-            <th>Color</th>
-            <th>Lote</th>
-            <th>Paquetes</th>
-            <th>Peso</th>
-            <th>Modificar</th>
-            <th>Resultados</th>
-            <th>Observaciones</th>
+            <th class="words">Producto</th>
+            <th class="words">Color</th>
+            <th class="words">Lote</th>
+            <th class="words">Paquetes</th>
+            <th class="words">Peso</th>
+            <th class="words">Modificar</th>
+            <th class="words">Resultados</th>
+            <th class="words">Observaciones</th>
         </tr>
         <tbody id="paquetes"></tbody>
     </table>

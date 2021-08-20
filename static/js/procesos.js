@@ -105,10 +105,12 @@ function separarBarras() {
 
 
     } else {
-      var fila = "<tr><td name='producto'>" + prod + "</td><td name='color'>" + color + "</td><td id='" + secuencia + "' name='lote'>" + lote
-        + "</td><td id= 'paq" + secuencia + "' name='" + secuencia + "'>" + paqs
-        + "</td><td id= 'peso" + secuencia + "' name='peso" + secuencia + "'>" + peso
-        + "</td><td><input type='text' id='modificar" + secuencia + "' name='modificar' value='0.0'onclick = 'this.value=" + '""' + "'><button id='Modificar' onclick='modificarPeso(" + secuencia + ")'>Modificar</button></td><td id= 'result" + secuencia + "' name='result" + secuencia + "'><img src='static/img/wait.gif' id= 'resulta" + secuencia + "' class='icon' alt=''></td><td id= 'diferencia" + secuencia + "' name='diferencia" + secuencia + "'></td></tr>";
+      var fila = "<tr><td name='producto' class='words'>" + prod 
+      + "</td><td name='color' class='words'>" + color 
+      + "</td><td id='" + secuencia + "' name='lote' class='words'>" + lote 
+      + "</td><td id= 'paq" + secuencia + "' name='" + secuencia + "' class='words'>" + paqs
+        + "</td><td id= 'peso" + secuencia + "' name='peso" + secuencia + "' class='words'>" + peso
+        + "</td><td><input type='text' id='modificar" + secuencia + "' name='modificar' value='0.0'onclick = 'this.value=" + '""' + "' class='words'><button id='Modificar' class='words' onclick='modificarPeso(" + secuencia + ")'>Modificar</button></td><td id= 'result" + secuencia + "' name='result" + secuencia + "' class='words'><img src='static/img/wait.gif' id= 'resulta" + secuencia + "' class='icon' alt=''></td><td id= 'diferencia" + secuencia + "' name='diferencia" + secuencia + "' class='words'></td></tr>";
       secuencia++;
       var btn = document.createElement("TR");
       btn.innerHTML = fila;
@@ -167,10 +169,12 @@ function separarBarras() {
 
 
     } else {
-      var fila = "<tr><td name='producto'>" + prod + "</td><td name='color'>" + color + "</td><td id='" + secuencia + "' name='lote'>" + lote
-        + "</td><td id= 'paq" + secuencia + "' name='" + secuencia + "'>" + paqs
-        + "</td><td id= 'peso" + secuencia + "' name='peso" + secuencia + "'>" + peso
-        + "</td><td><input type='text' id='modificar" + secuencia + "' name='modificar' value='0.0'onclick = 'this.value=" + '""' + "'><button id='Modificar' onclick='modificarPeso(" + secuencia + ")'>Modificar</button></td><td id= 'result" + secuencia + "' name='result" + secuencia + "'><img src='static/img/wait.gif' id= 'resulta" + secuencia + "' class='icon' alt=''></td><td id= 'diferencia" + secuencia + "' name='diferencia" + secuencia + "'></td></tr>";
+      var fila = "<tr><td name='producto' class='words'>" + prod 
+      + "</td><td name='color' class='words'>" + color 
+      + "</td><td id='" + secuencia + "' name='lote' class='words'>" + lote 
+      + "</td><td id= 'paq" + secuencia + "' name='" + secuencia + "' class='words'>" + paqs
+        + "</td><td id= 'peso" + secuencia + "' name='peso" + secuencia + "' class='words'>" + peso
+        + "</td><td><input type='text' id='modificar" + secuencia + "' name='modificar' value='0.0'onclick = 'this.value=" + '""' + "' class='words'><button id='Modificar' class='words' onclick='modificarPeso(" + secuencia + ")'>Modificar</button></td><td id= 'result" + secuencia + "' name='result" + secuencia + "' class='words'><img src='static/img/wait.gif' id= 'resulta" + secuencia + "' class='icon' alt=''></td><td id= 'diferencia" + secuencia + "' name='diferencia" + secuencia + "' class='words'></td></tr>";
       var btn = document.createElement("TR");
       btn.innerHTML = fila;
       document.getElementById("paquetes").appendChild(btn);
@@ -181,7 +185,9 @@ function separarBarras() {
   }
   $('#barras').val('');
   $("#barras").focus();
-
+  guardarTabla();
+  reader.readAsText(file);
+  reader.onload=onLoad;
 
 }
 
@@ -236,6 +242,8 @@ function modificarPeso(number) {
     }
 
   }
-
+  guardarTabla();
+  reader.readAsText(file);
+  reader.onload=onLoad;
 }
 var materiales = new Array(2);

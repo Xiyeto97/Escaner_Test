@@ -1,5 +1,6 @@
 var input = myForm.myInput;
 var reader = new FileReader;
+var file = "";
 var itemsCheck = new Array();
 var k = 0;
 var l = 0;
@@ -14,11 +15,13 @@ input.addEventListener('change', onChange);
 
 
 function onChange(event) {
-  var file = event.target.files[0];
+  file = event.target.files[0];
+  console.log(event.target.files);
+  console.log(file);
 try {
-  reader.readAsText(file);
+  //reader.readAsText(file);
 
-  reader.onload = onLoad;
+  //reader.onload = onLoad;
 } catch (error) {
   console.log(error);
 }
@@ -187,7 +190,7 @@ function acomodarLotes(lotes) {
     
   }
   console.log(impresion);
-  alert(impresion);
+  //alert(impresion);
   console.log(loteCoincidio);
   console.log(lotePaquetes);
   console.log(lotePeso);
@@ -197,7 +200,16 @@ function acomodarLotes(lotes) {
 
 function descontarPeso(lotePaquetes) {
   for (let i = 0; i < lotePaquetes.length; i++) {
-    $("#diferencia"+lotePaquetes[i][0]).text('A este lote le hacen falta '+parseFloat(lotePaquetes[i][1]).toFixed(2)+' Kg.');
+    if(lotePaquetes[i][1]<0){
+      var ope=lotePaquetes[i][1]*(-1);
+      $("#diferencia"+lotePaquetes[i][0]).text('A este lote le sobran '+parseFloat(ope).toFixed(2)+' Kg.');
+      var id=document.getElementById("resulta" + (i+1));
+      id.src="static/img/wait.gif";
+    }else{
+      $("#diferencia"+lotePaquetes[i][0]).text('A este lote le hacen falta '+parseFloat(lotePaquetes[i][1]).toFixed(2)+' Kg.');
+      
+    }
+    
     
   }
 }

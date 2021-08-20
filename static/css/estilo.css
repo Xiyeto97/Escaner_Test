@@ -1,0 +1,14 @@
+@import url(http://db.onlinewebfonts.com/c/df597c648fcebcf41efc459799282b7f?family=Athelas);
+.icon{
+    width: 24px;
+    height: 24px;
+    /*color: rgb(26,83,137);
+    color: rgb(224,43,62);
+    color: white;
+    font-family: Athelas;*/
+}
+
+.words{
+    font-family: Athelas;
+    font-size: large;
+}
