@@ -1,6 +1,7 @@
 var input = myForm.myInput;
 var reader = new FileReader;
 var file = "";
+var nameFile=[];
 var itemsCheck = new Array();
 var k = 0;
 var l = 0;
@@ -17,7 +18,8 @@ input.addEventListener('change', onChange);
 function onChange(event) {
   file = event.target.files[0];
   console.log(event.target.files);
-  console.log(file);
+  nameFile=file.name.split('.');
+  console.log(nameFile[0]);
 try {
   //reader.readAsText(file);
 
@@ -226,4 +228,41 @@ soloLotes = new Array();
 loteCoincidio = new Array();
 lotePaquetes = [];
 lotePeso = new Array();
+}
+
+function pasarTabla(tabla) {
+  var tablaCopia=
+  document.getElementById(tabla).innerHTML;
+  console.log(tablaCopia);
+}
+
+function exportTableToExcel(tableID){
+  var downloadLink;
+  var dataType = 'application/vnd.ms-excel';
+  var tableSelect = document.getElementById(tableID);
+  var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+  
+  // Specify file name
+  filename = nameFile[0]+'.xls';
+  
+  // Create download link element
+  downloadLink = document.createElement("a");
+  
+  document.body.appendChild(downloadLink);
+  
+  if(navigator.msSaveOrOpenBlob){
+      var blob = new Blob(['ufeff', tableHTML], {
+          type: dataType
+      });
+      navigator.msSaveOrOpenBlob( blob, filename);
+  }else{
+      // Create a link to the file
+      downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+  
+      // Setting the file name
+      downloadLink.download = filename;
+      
+      //triggering the function
+      downloadLink.click();
+  }
 }

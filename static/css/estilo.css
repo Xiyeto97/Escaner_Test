@@ -12,3 +12,20 @@
     font-family: Athelas;
     font-size: large;
 }
+
+.excel{
+    background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    background-image:url('../img/excel_48.png');
+    width: 48px;
+    height: 48px;
+    align-self: flex-end;
+    
+}
+
+.div-superior{
+    border: 5px outset rgb(224,43,62);
+  background-color: rgb(26,83,137);    
+}

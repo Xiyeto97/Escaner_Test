@@ -13,16 +13,23 @@
     <link rel="stylesheet" href="static/css/estilo.css">
     <style></style>
     <style>
-        
+
     </style>
-    
+
     <title>Prueba</title>
 </head>
 
 <body>
-    <label for="barras" class="words">Paquete:</label><br>
-    <input type="text" id="barras" name="barras" value="" class="words">
-    <button id="Agregar" onclick="separarBarras()" class="words">Agregar</button>
+    <form name="myForm" class="words">
+        <input name="myInput" type="file" class="words">
+    </form>
+    <div class="div-superior">
+        <label for="barras" class="words">Paquete:</label>
+        <input type="text" id="barras" name="barras" value="" class="words">
+        <button id="Agregar" onclick="separarBarras()" class="words">Agregar</button><br>
+        <input type="button" class="excel" onclick="exportTableToExcel('t01')"/>
+    </div>
+
 
     <table id="t01" class="tablaProuctos">
         <tr>
@@ -39,11 +46,9 @@
     </table>
 
 
-    <button id="Guardar" onclick="guardarTabla()">Guardar</button>
-    <form name="myForm">
-        <input name="myInput" type="file">
-    </form>
-    <div></div>
+
+
+
 
 </body>
 
