@@ -20,30 +20,46 @@
 </head>
 
 <body>
-    <form name="myForm" class="words">
-        <input name="myInput" type="file" class="words">
-    </form>
+    <div class="div-superior">
+        <form name="myForm" class="words">
+            <input name="myInput" type="file" class="words">
+        </form>
+    </div>
+
     <div class="div-superior">
         <label for="barras" class="words">Paquete:</label>
         <input type="text" id="barras" name="barras" value="" class="words">
-        <button id="Agregar" onclick="separarBarras()" class="words">Agregar</button><br>
-        <input type="button" class="excel" onclick="exportTableToExcel('t01')"/>
+        <button id="Agregar" onclick="separarBarras()" class="words">Agregar</button>
+        <input type="button" class="excel" onclick="exportTableToExcel('t01')" />
     </div>
 
+    <div class="div-superior">
+        <table id="t01" class="tablaProuctos">
+            <tr>
+                <th class="words">PRODUCTO</th>
+                <th class="words">COLOR</th>
+                <th class="words">LOTE</th>
+                <th class="words">PAQUETES</th>
+                <th class="words">PESO</th>
+                <th class="words">MODIFICAR</th>
+                <th class="words">RESULTADOS</th>
+                <th class="words">OBSERVACIONES</th>
+            </tr>
+            <tbody id="paquetes">
+                <tr>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Holaholaholaholaholaholaholaholaholaholahaol</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
 
-    <table id="t01" class="tablaProuctos">
-        <tr>
-            <th class="words">Producto</th>
-            <th class="words">Color</th>
-            <th class="words">Lote</th>
-            <th class="words">Paquetes</th>
-            <th class="words">Peso</th>
-            <th class="words">Modificar</th>
-            <th class="words">Resultados</th>
-            <th class="words">Observaciones</th>
-        </tr>
-        <tbody id="paquetes"></tbody>
-    </table>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
 

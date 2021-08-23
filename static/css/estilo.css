@@ -1,5 +1,5 @@
 @import url(http://db.onlinewebfonts.com/c/df597c648fcebcf41efc459799282b7f?family=Athelas);
-.icon{
+.icon {
     width: 24px;
     height: 24px;
     /*color: rgb(26,83,137);
@@ -8,24 +8,62 @@
     font-family: Athelas;*/
 }
 
-.words{
+.words {
     font-family: Athelas;
     font-size: large;
 }
 
-.excel{
+.excel {
     background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-    background-image:url('../img/excel_48.png');
-    width: 48px;
-    height: 48px;
-    align-self: flex-end;
-    
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-image: url('../img/excel.png');
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.div-superior{
-    border: 5px outset rgb(224,43,62);
-  background-color: rgb(26,83,137);    
+.div-superior {
+    text-align: center;
+    font-size: 150%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 5px solid rgb(224, 43, 62);
+    background-color: white;
+    border-radius: 10px;
+    overflow-x: auto;
+    /* background-image: repeating-radial-gradient(rgb(224, 43, 62), rgb(26, 83, 137));*/
+}
+
+.tablaProuctos {
+    width: 100px;
+    margin: 0 auto;
+    border: 5px solid black;
+    background-color: rgb(26, 83, 137);
+}
+
+th {
+    border-bottom: black solid 5px;
+    padding: 5px;
+    color: white;
+}
+
+td {
+    border-bottom: 5px solid black;
+    padding: 5px;
+    background-color: white;
+}
+
+th:hover {
+    background-color: rgb(224, 43, 62);
+    color: black;
+}
+
+body {
+    background-image: url(../img/logo_negativo.PNG);
 }
