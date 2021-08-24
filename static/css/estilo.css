@@ -37,11 +37,29 @@
     background-color: white;
     border-radius: 10px;
     overflow-x: auto;
+    overflow-y: auto;
+    /* background-image: repeating-radial-gradient(rgb(224, 43, 62), rgb(26, 83, 137));*/
+}
+
+.div-tabla {
+    text-align: center;
+    font-size: 150%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 5px solid rgb(224, 43, 62);
+    background-color: white;
+    border-radius: 10px;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 60rem;
+    max-height: 45rem;
     /* background-image: repeating-radial-gradient(rgb(224, 43, 62), rgb(26, 83, 137));*/
 }
 
 .tablaProuctos {
-    width: 100px;
+    width: 95%;
     margin: 0 auto;
     border: 5px solid black;
     background-color: rgb(26, 83, 137);
@@ -59,11 +77,45 @@ td {
     background-color: white;
 }
 
-th:hover {
+/*tbody:hover {
     background-color: rgb(224, 43, 62);
     color: black;
+}*/
+
+tr:hover td {
+    background-color: rgb(224, 43, 62);
+    color: white;
 }
 
 body {
     background-image: url(../img/logo_negativo.PNG);
 }
+
+
+#btnArchivo{
+    margin-bottom: 1rem;    
+}
+
+button {
+    display: inline-block;
+    padding: .7rem;
+    font-size: 2rem;
+    text-size-adjust: initial;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(26, 83, 137);
+    border: none;
+    border-radius: 15px;
+  }
+  
+button:hover {background-color: rgb(224, 43, 62)}
+  
+button:active {
+    background-color: rgb(224, 43, 62);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+

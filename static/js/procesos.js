@@ -1,6 +1,7 @@
 var barras = document.getElementById("barras");
 var materiales = new Array(2);
-barras.focus();
+var btnArchivo = document.getElementById("btnArchivo");
+btnArchivo.focus();
 barras.addEventListener("keydown", function (e) {
   if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
     separarBarras();

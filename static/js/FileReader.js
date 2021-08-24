@@ -20,6 +20,7 @@ function onChange(event) {
   console.log(event.target.files);
   nameFile=file.name.split('.');
   console.log(nameFile[0]);
+  barras.focus();
 try {
   //reader.readAsText(file);
 
@@ -235,6 +236,7 @@ function pasarTabla(tabla) {
   document.getElementById(tabla).innerHTML;
   console.log(tablaCopia);
 }
+
 
 function exportTableToExcel(tableID){
   var downloadLink;

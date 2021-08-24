@@ -8,7 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="static/js/procesos.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="static/js/FileReader.js" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!--<link href="//db.onlinewebfonts.com/c/df597c648fcebcf41efc459799282b7f?family=Athelas" rel="stylesheet" type="text/css"/>-->
     <link rel="stylesheet" href="static/css/estilo.css">
     <style></style>
@@ -22,19 +21,19 @@
 <body>
     <div class="div-superior">
         <form name="myForm" class="words">
-            <input name="myInput" type="file" class="words">
+            <input name="myInput" type="file" class="words" id="btnArchivo">
         </form>
-    </div>
-
-    <div class="div-superior">
-        <label for="barras" class="words">Paquete:</label>
+        <label for="barras" class="words">Codigo:</label>
         <input type="text" id="barras" name="barras" value="" class="words">
-        <button id="Agregar" onclick="separarBarras()" class="words">Agregar</button>
-        <input type="button" class="excel" onclick="exportTableToExcel('t01')" />
+        <button id="Agregar" onclick="separarBarras()" class="words">AGREGAR</button>
+        <input type="button" id="btnExportar" class="excel" onclick="exportTableToExcel('t01')" />
     </div>
 
-    <div class="div-superior">
+
+    <div class="div-tabla">
         <table id="t01" class="tablaProuctos">
+            
+            <tbody id="paquetes">
             <tr>
                 <th class="words">PRODUCTO</th>
                 <th class="words">COLOR</th>
@@ -45,18 +44,6 @@
                 <th class="words">RESULTADOS</th>
                 <th class="words">OBSERVACIONES</th>
             </tr>
-            <tbody id="paquetes">
-                <tr>
-                    <td>Hola</td>
-                    <td>Hola</td>
-                    <td>Holaholaholaholaholaholaholaholaholaholahaol</td>
-                    <td>Hola</td>
-                    <td>Hola</td>
-                    <td>Hola</td>
-                    <td>Hola</td>
-                    <td>Hola</td>
-
-                </tr>
             </tbody>
         </table>
     </div>
