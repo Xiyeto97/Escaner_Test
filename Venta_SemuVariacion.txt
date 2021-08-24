@@ -1,0 +1,12 @@
+R562   MANCHESTER           MARIN MARINO               2600-MARINE                  10          299.00       56,808.92     190.00 MXN
+R562   MANCHESTER           BLACK NEGRO                2603-BLACK                    2           54.90       10,430.80     190.00 MXN
+R562   MANCHESTER           WHITE BLANCO               2699-WHITE                    7          204.10       38,778.27     190.00 MXN
+R562   MANCHESTER           GREEN VERDE                2872-GREEN                   15          440.60       83,712.41     190.00 MXN
+R562   MANCHESTER           EGGNO EGGNOG               2671-EGG                     10          405.90       77,119.54     190.00 MXN
+R584   MILAN 2/48           81098 PALO DE              6127133592                   69        1,001.06      218,229.88     218.00 MXN
+R584   MILAN 2/48           91006 LILA CLA             6127133591                   59          861.24      187,749.29     218.00 MXN
+R584   MILAN 2/48           80502 ROSA                 6127132666                   11          162.09       35,335.43     218.00 MXN
+R584   MILAN 2/48           44956 AZUL MAR             6127133485                   10          119.74       26,103.18     218.00 MXN
+R584   MILAN 2/48           31329 GRIS CLA             6127133573                   21          305.92       66,690.19     218.00 MXN
+R584   MILAN 2/48           81296 CORAL                6127133597                   12          178.41       38,893.17     218.00 MXN
+4,578.26      943,456.11     206.07

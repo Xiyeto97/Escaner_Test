@@ -11,6 +11,14 @@ barras.addEventListener("keydown", function (e) {
 var secuencia = 1;
 
 function separarBarras() {
+  try {
+    reader.readAsText(file);
+  reader.onload=onLoad;
+  } catch (error) {
+    alert('No se a cargado un archivo');
+    alert('Error: '+error);
+  }
+  
   var barras = $("#barras").val();
   var celdas = false;
   var id = "";
@@ -187,8 +195,7 @@ function separarBarras() {
   $('#barras').val('');
   $("#barras").focus();
   guardarTabla();
-  reader.readAsText(file);
-  reader.onload=onLoad;
+ 
 
 }
 
@@ -223,28 +230,32 @@ function modificarPeso(number) {
   var paqts = parseFloat(document.getElementById("paq" + number).innerText);
   var modificacion = (parseFloat(peso) - parseFloat(pesoM)).toFixed(2);
   console.log("peso:" + peso + " pesoM:" + pesoM + " " + number + " paquetes:" + paqts + " resta:" + modificacion);
-
-  if (modificacion < 0) {
-    window.alert('El peso es incorrecto');
-    $("#modificar" + number).val('0.0');
-  } else {
-    if (modificacion == 0) {
-      $("#paq" + number).text('0');
-    }
-    if (paqts > 1) {
-      $("#peso" + number).text(modificacion);
+   if(pesoM=="0.0"){
+    alert('Ingresa un valor mayor a cero');
+   } else{
+    if (modificacion < 0) {
+      window.alert('El peso es incorrecto');
       $("#modificar" + number).val('0.0');
-      $("#paq" + number).text(paqts - 1);
-      barras.focus();
     } else {
-      $("#peso" + number).text(modificacion);
-      $("#modificar" + number).val('0.0');
-      barras.focus();
+      if (modificacion == 0) {
+        $("#paq" + number).text('0');
+      }
+      if (paqts > 1) {
+        $("#peso" + number).text(modificacion);
+        $("#modificar" + number).val('0.0');
+        $("#paq" + number).text(paqts - 1);
+        barras.focus();
+      } else {
+        $("#peso" + number).text(modificacion);
+        $("#modificar" + number).val('0.0');
+        barras.focus();
+      }
+  
     }
-
-  }
-  guardarTabla();
-  reader.readAsText(file);
-  reader.onload=onLoad;
+    guardarTabla();
+    reader.readAsText(file);
+    reader.onload=onLoad;
+   }
+  
 }
 var materiales = new Array(2);

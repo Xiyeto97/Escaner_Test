@@ -53,8 +53,8 @@
     border-radius: 10px;
     overflow-x: auto;
     overflow-y: auto;
-    height: 60rem;
-    max-height: 45rem;
+    height: 35rem;
+    max-height: 40rem;
     /* background-image: repeating-radial-gradient(rgb(224, 43, 62), rgb(26, 83, 137));*/
 }
 
