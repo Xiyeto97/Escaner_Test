@@ -210,11 +210,11 @@ function descontarPeso(lotePaquetes) {
       id.src="static/img/wait.gif";
     }else{
       $("#diferencia"+lotePaquetes[i][0]).text('A este lote le hacen falta '+parseFloat(lotePaquetes[i][1]).toFixed(2)+' Kg.');
-      
     }
     
     
   }
+  limpiar();
 }
 
 function limpiar() {
